@@ -2,7 +2,7 @@ FROM golang:1.11.2-stretch
 
 RUN apt update && \
     apt upgrade -y && \
-    apt install -y openssh-client vim git curl screen net-tools zsh
+    apt install -y openssh-client vim git curl screen net-tools zsh apache2-utils
 
 # install golang tools
 RUN go get -u -v github.com/golang/dep/cmd/dep && \
