@@ -13,10 +13,10 @@ WORKDIR /root
 # install oh my zsh
 ADD zsh-install.sh /root/zsh-install.sh
 
-RUN chsh -s /usr/bin/zsh root && \
-    chmod +x zsh-install.sh && ./zsh-install.sh && \
-    sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"ys\"/g' .zshrc && \
-    source .zshrc
+# RUN chsh -s /usr/bin/zsh root && \
+#     chmod +x zsh-install.sh && ./zsh-install.sh && \
+#     sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"ys\"/g' .zshrc && \
+#     source .zshrc
 
 #
 
