@@ -11,9 +11,10 @@ RUN go get -u -v github.com/golang/dep/cmd/dep && \
 WORKDIR /root 
 
 # install oh my zsh
+ADD zsh-install.sh /root/zsh-install.sh
 
 RUN chsh -s /usr/bin/zsh root && \
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
+    source zsh-install.sh && \
     sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"ys\"/g' .zshrc && \
     source .zshrc
 
