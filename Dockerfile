@@ -11,13 +11,7 @@ RUN go get -u -v github.com/golang/dep/cmd/dep && \
 WORKDIR /root 
 
 # install oh my zsh
-ADD zsh-install.sh /root/zsh-install.sh
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
-# RUN chsh -s /usr/bin/zsh root && \
-#     chmod +x zsh-install.sh && ./zsh-install.sh && \
-#     sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"ys\"/g' .zshrc && \
-#     source .zshrc
-
-#
-
-# ENTRYPOINT [ "tail", "-f", "/dev/null" ]
+# change theme of omz
+RUN sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"ys\"/g' .zshrc
