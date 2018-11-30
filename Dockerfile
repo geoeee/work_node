@@ -1,5 +1,5 @@
 FROM golang:1.11.2-stretch
-
+ENV GOPATH /root/go
 RUN apt update && \
     apt upgrade -y && \
     apt install -y openssh-client vim git curl screen net-tools zsh apache2-utils
