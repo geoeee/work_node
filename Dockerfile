@@ -1,8 +1,12 @@
-FROM golang:1.11.2-stretch
+FROM golang:alpine
+
+LABEL version="0.1"
+LABEL Maintainer="Joey Zhang"
 ENV GOPATH /root/go
-RUN apt update && \
-    apt upgrade -y && \
-    apt install -y openssh-client vim git curl screen net-tools zsh apache2-utils
+RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main/" > /etc/apk/repositories
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache openssh-client vim git curl screen net-tools zsh apache2-utils
 
 # install golang tools
 RUN go get -u -v github.com/golang/dep/cmd/dep && \
