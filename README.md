@@ -1,5 +1,5 @@
-# work-node
+# work_node
 
 docker image for work-node 
 
-based on Ubuntu 16.04
+based on golang:alpine
