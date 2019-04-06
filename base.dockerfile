@@ -14,7 +14,7 @@ RUN apk update && \
 #     go get -u -v github.com/go-swagger/go-swagger/cmd/swagger
 
 WORKDIR /root 
-
+ADD ./vimrc ./.vimrc
 # # install oh my zsh
 # RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
